@@ -15,6 +15,11 @@ branch.setBranchViewData({
         'user_id': '45123'
     }
 });
+var listener = function(event, data) { console.log(event, data); }
+// Specify an event to listen for
+branch.addListener('didClickJourneyCTA', listener);
+// Listen for all events
+branch.addListener(listener);
 </script>
     
 <p>Click the button to trigger new data to Branch.</p>
@@ -33,14 +38,7 @@ branch.setBranchViewData({
     }
 });}
 </script>
-<script>
-    
-var listener = function(event, data) { console.log(event, data); }
-// Specify an event to listen for
-branch.addListener('didClickJourneyCTA', listener);
-// Listen for all events
-branch.addListener(listener);
-</script>
+
 
 </body>
 </html>
