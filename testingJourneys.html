@@ -16,5 +16,20 @@ branch.setBranchViewData({
     }
 });
 </script>
+    
+<p>Click the button to trigger new data to Branch.</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+branch.setBranchViewData({
+    data: {
+        'filter1': 'filterdata',
+    }
+});}
+</script>
 </body>
 </html>
