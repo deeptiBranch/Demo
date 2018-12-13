@@ -15,27 +15,7 @@ branch.setBranchViewData({
         'user_id': '45123'
     }
 });
-function sendSMS() {
-                var phone = "(+91)8197570898";
-                var linkData = {
-                    tags: [],
-                    channel: 'Website',
-                    feature: 'TextMeTheApp',
-                    data: {
-                        'foo': 'bar'
-                    }
-                };
-                var options = {};
-                var callback = function(err, result) {
-                    if (err) {
-                        alert("Sorry, something went wrong.");
-                    }
-                    else {
-                        alert("SMS sent!");
-                    }
-                };
-                branch.sendSMS(phone, linkData, options, callback);
-}
+
 var listener = function(event, data) { console.log(event, data); }
 // Specify an event to listen for
 branch.addListener('didClickJourneyCTA', listener);
@@ -66,8 +46,30 @@ branch.setBranchViewData({
     }
 });}
 </script>
+<script>
 
-
-    
+function sendSMS() {
+                var phone = "(+91)8197570898";
+                var linkData = {
+                    tags: [],
+                    channel: 'Website',
+                    feature: 'TextMeTheApp',
+                    data: {
+                        'foo': 'bar'
+                    }
+                };
+                var options = {};
+                var callback = function(err, result) {
+                    if (err) {
+                        alert("Sorry, something went wrong.");
+                    }
+                    else {
+                        alert("SMS sent!");
+                    }
+                };
+                branch.sendSMS(phone, linkData, options, callback);
+}
+ </script>
+   
 </body>
 </html>
