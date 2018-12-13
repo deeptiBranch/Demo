@@ -15,37 +15,8 @@ branch.setBranchViewData({
         'user_id': '45123'
     }
 });
-var listener = function(event, data) { console.log(event, data); }
-// Specify an event to listen for
-branch.addListener('didClickJourneyCTA', listener);
-// Listen for all events
-branch.addListener(listener);
-</script>
-    
-<p>Click the button to trigger new data to Branch.</p>
-
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-window.alert("adding filter data");
-branch.setBranchViewData({
-    data: {
-        'filter1': 'filterdata',
-        'filter2': 'filterdata'
-
-    }
-});}
-</script>
-
-<script type="text/javascript">
-        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-
-        branch.init('key_live_nov2M4ICsyBuIKZQZ690dfnoxwjM0LkH');
-            function sendSMS(form) {
-                var phone = form.phone.value;
+function sendSMS() {
+                var phone = "(+91)8197570898";
                 var linkData = {
                     tags: [],
                     channel: 'Website',
@@ -64,9 +35,39 @@ branch.setBranchViewData({
                     }
                 };
                 branch.sendSMS(phone, linkData, options, callback);
-                form.phone.value = "";
-            }
-    </script>
+}
+var listener = function(event, data) { console.log(event, data); }
+// Specify an event to listen for
+branch.addListener('didClickJourneyCTA', listener);
+// Listen for all events
+branch.addListener(listener);
+</script>
+    
+<p>Click the button to trigger new data to Branch.</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+    
+<p>Click the button to send sms to Deepti.</p>
+
+<button onclick="sendSMS()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+window.alert("adding filter data");
+branch.setBranchViewData({
+    data: {
+        'filter1': 'filterdata',
+        'filter2': 'filterdata'
+
+    }
+});}
+</script>
+
+
     
 </body>
 </html>
